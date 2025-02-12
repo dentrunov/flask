@@ -10,7 +10,6 @@ from uuid import uuid4
 
 from app import db, login
 
-
 class User(UserMixin, db.Model):
     class Status(Enum):
 
