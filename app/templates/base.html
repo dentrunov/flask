@@ -18,7 +18,7 @@
             <div class="col"><img src="{{ url_for('static', filename='logo.png')}}" class="img"></div>
             <div class="col"><a href="{{ url_for('index') }}" class="nav">Главная страница</a></div>
             {% if current_user.is_authenticated %}
-            <div class="col"><a href="{{ url_for('second')}}" class="nav">Личный кабинет</a></div>
+            <div class="col"><a href="{{ url_for('user')}}" class="nav">Личный кабинет</a></div>
 
             <div class="col"><a href="{{ url_for('logout')}}" class="nav">Выйти из аккаунта</a></div>
             {% else %}

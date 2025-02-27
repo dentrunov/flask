@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>{{ title }} </h2>
+  <table width=100% heigth=80% class="class_table">
+    <tr>
+      {% for class in classes %}
+        <td>
+          {{class.class_paral}}{{class.class_name}}
+        </td>
+      {% endfor %}
+    </tr>
+    <tr>
+      {% for class in students.values() %}
+        <td>
+          <ol>
+          {% for student in class%}
+            <li>{{student.surname}} {{student.name}}</li>
+          {% endfor %}
+          </ol>
+        </td>
+      {% endfor %}
+    </tr>
+  </table>
+    
+{% endblock %}
