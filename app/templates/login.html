@@ -1,19 +1,57 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/styles/normalize.css')}}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/styles/styles.css')}}" />
 
-{% block content %}
-  <h1>АВТОРИЗАЦИЯ</h1>
-  <form action="" method="post" novalidate class="authform" >
-    {{ form.hidden_tag() }}
-    <p>
-      {{ form.username.label }}<br>
-      {{ form.username(size=32) }}
-    </p>
-    <p>
-      {{ form.password.label }}<br>
-      {{ form.password(size=32) }}
-    </p>
-    <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-    <p>{{ form.submit() }}</p>
-  </form>
+    <!-- Bootastap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
 
-{% endblock %}
+    <title>Mega Project | Login</title>
+  </head>
+
+  <body>
+    <!-- <section class="admin" id="admin">
+      <a href="index.html" class="admin__link"><i class="bi bi-gear"></i></a>
+    </section> -->
+
+    <section class="login" id="login">
+      <div class="container login__container">
+        <div class="login__block">
+          <h4 class="login__h4">Войти в аккаунт</h4>
+
+          <form class="login__form" action="#" method="post">
+            <label class="login__form__label">Ваше имя</label>
+            <input class="login__form__input" type="text" name="username" placeholder="Логин"  required    />
+            <label class="login__form__label">Пароль</label>
+            <input
+              class="login__form__input"
+              type="password"
+              name="password"
+              placeholder="Пароль"
+              required
+            />
+            <button
+              class="btn-reset btn_style"
+              type="submit"
+              name="form_auth_submit"
+            >
+              Войти
+            </button>
+          </form>
+          <a class="header__btn-link" href="{{ url_for('register')}}">
+            <button class="btn-reset header__btn">Ещё нет аккаунта?</button>
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </body>
+</html>
